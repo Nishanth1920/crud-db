@@ -18,6 +18,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD-Users</title>
+    <link rel="shortcut icon" href="https://logopond.com/logos/70a5a28358a0f80718ac4f6737f018ae.png" type="image/x-icon">
     <!-- cdn for pagination and sort implementation in way better -->
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
@@ -31,13 +32,24 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         }
 
         .container {
-            margin-top: 20px;
+            margin-top: 30px;
             width: 85%;
         }
+
+        body {
+            background-image: url(https://media.istockphoto.com/id/1395723007/vector/pink-orange-yellow-and-red-color-gradient-summer-defocused-blurred-motion-abstract.jpg?s=612x612&w=0&k=20&c=qf1HnidyUgJiMLa4bHHomssiu7jdNEL7j-ezmiFrGb8=);
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            /* align-items: center; */
+        }
+        
     </style>
 </head>
 
-<body style="background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=740&t=st=1710478849~exp=1710479449~hmac=c1b2c5635922a7aaf7cef296aa08fd60ee84c8f446efb780c0951b07b2b7289a);">
+<body>
 
     <body>
 
@@ -47,11 +59,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             </div>
 
             <div class="d-flex justify-content-between mt-3">
-                <a href="" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addUserModal" style="margin-bottom: 10px;"> <i class="bi bi-person-fill-add"></i> Add User</a>
+                <a href="" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addUserModal" style="margin-bottom: 10px;"> <i class="bi bi-person-fill-add"></i> Add User</a>
                 <a href="logout.php" class="btn btn-danger" style="margin-bottom: 10px;"><i class="bi bi-box-arrow-left"></i> Log Out</a>
             </div>
 
-            <table class="table table-hover shadow-lg p-3 mb-5 bg-body rounded" id="userTable" style="cursor: pointer;">
+            <table class="table table-hover shadow-lg p-3 mb-5 bg-body text-light rounded" id="userTable" style="cursor: pointer;">
                 <thead>
                     <tr>
                         <th>ID</th>
