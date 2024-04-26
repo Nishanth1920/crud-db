@@ -25,7 +25,7 @@ $fb = new Facebook\Facebook([
 
     <style>
         body {
-            background-image: url(https://media.istockphoto.com/id/1395723007/vector/pink-orange-yellow-and-red-color-gradient-summer-defocused-blurred-motion-abstract.jpg?s=612x612&w=0&k=20&c=qf1HnidyUgJiMLa4bHHomssiu7jdNEL7j-ezmiFrGb8=);
+            background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=740&t=st=1710478849~exp=1710479449~hmac=c1b2c5635922a7aaf7cef296aa08fd60ee84c8f446efb780c0951b07b2b7289a);
             background-size: cover;
             background-position: center;
             height: 100vh;

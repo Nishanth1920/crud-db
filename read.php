@@ -18,13 +18,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD-Users</title>
-    <link rel="shortcut icon" href="https://logopond.com/logos/70a5a28358a0f80718ac4f6737f018ae.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://logopond.com/logos/70a5a28358a0f80718ac4f6737f018ae.png"
+        type="image/x-icon">
     <!-- cdn for pagination and sort implementation in way better -->
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- cdn for a bootstrap icon -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css"
+        integrity="sha384-4LISF5TTJX/fLmGSxO53rV4miRxdg84mZsxmO8Rx5jGtp/LbrixFETvWa5a6sESd" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <style>
         div {
@@ -37,7 +39,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         }
 
         body {
-            background-image: url(https://media.istockphoto.com/id/1395723007/vector/pink-orange-yellow-and-red-color-gradient-summer-defocused-blurred-motion-abstract.jpg?s=612x612&w=0&k=20&c=qf1HnidyUgJiMLa4bHHomssiu7jdNEL7j-ezmiFrGb8=);
+            /* background-image: url(https://img.freepik.com/free-vector/gradient-blur-pink-blue-abstract-background_53876-117324.jpg?w=740&t=st=1710478849~exp=1710479449~hmac=c1b2c5635922a7aaf7cef296aa08fd60ee84c8f446efb780c0951b07b2b7289a); */
             background-size: cover;
             background-position: center;
             height: 100vh;
@@ -45,7 +47,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             justify-content: center;
             /* align-items: center; */
         }
-        
     </style>
 </head>
 
@@ -55,15 +56,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
         <div class="container p-4">
             <div>
-                <h3>Existing Users</h3>
+                <center><h3>Codeigniter 3 CRUD (Create-Read-Update-Delete)</h3></center>
             </div>
 
-            <div class="d-flex justify-content-between mt-3">
-                <a href="" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#addUserModal" style="margin-bottom: 10px;"> <i class="bi bi-person-fill-add"></i> Add User</a>
-                <a href="logout.php" class="btn btn-danger" style="margin-bottom: 10px;"><i class="bi bi-box-arrow-left"></i> Log Out</a>
+            <div class="d-flex justify-content-between mt-3 mb-3">
+                <a href="" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#addUserModal" style="margin-bottom: 10px;"> <i class="bi bi-person-fill-add"></i>
+                    Add User</a>
+                <a href="logout.php" type="button" class="btn btn-warning" style="margin-bottom: 10px;"><i
+                        class="bi bi-box-arrow-left"></i> Log Out</a>
             </div>
 
-            <table class="table table-hover shadow-lg p-3 mb-5 bg-body text-light rounded" id="userTable" style="cursor: pointer;">
+            <table class="table table-hover table-striped bg-body text-light" id="userTable"
+                style="cursor: pointer; background-color: transparent;">
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -154,7 +159,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                             </div>
                             <div id="addError" class="alert alert-danger d-none" role="alert"></div>
                             <button type="submit" class="btn btn-primary"><i class="bi bi-plus"></i> Add</button>
-                            <a href="read.php" class="btn btn-secondary btn-md active" class="btn-close" data-bs-dismiss="modal" aria-label="Close" role="button" aria-pressed="true">Cancel</a>
+                            <a href="read.php" class="btn btn-secondary btn-md active" class="btn-close"
+                                data-bs-dismiss="modal" aria-label="Close" role="button" aria-pressed="true">Cancel</a>
                         </form>
                     </div>
                 </div>
@@ -185,7 +191,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('#userTable').DataTable({
                     "lengthMenu": [
                         [-1, 20, 15, 10],
@@ -198,9 +204,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </script>
 
         <script>
-            $(document).ready(function() {
+            $(document).ready(function () {
                 // Handle delete button click
-                $('.delete-btn').click(function() {
+                $('.delete-btn').click(function () {
                     var id = $(this).data('id');
                     $('#confirmDeleteBtn').attr('href', 'delete.php?id=' + id);
                 });
@@ -208,8 +214,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         </script>
 
         <script>
-            $(document).ready(function() {
-                $('#addUserForm').submit(function(e) {
+            $(document).ready(function () {
+                $('#addUserForm').submit(function (e) {
                     e.preventDefault();
                     var name = $('#name').val();
                     var email = $('#email').val();
@@ -245,7 +251,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                         type: 'POST',
                         url: 'adduserError.php',
                         data: $(this).serialize(),
-                        success: function(response) {
+                        success: function (response) {
                             if (response === 'success') {
                                 // Reload the page to reflect the new user
                                 location.reload();
@@ -257,11 +263,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 });
             });
         </script>
-
-
-
-
-
 
     </body>
 
